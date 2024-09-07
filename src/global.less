@@ -1,0 +1,23 @@
+@import './assets/styles/reset';
+
+:root {
+	--logo-theme: #000;
+}
+
+#logo {
+	cursor: pointer;
+	transition-property: transform;
+	text-align: inherit;
+	list-style: none;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
+	width: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		transform: scale(1.1);
+		transition: transform 0.1s linear;
+	}
+}

@@ -1,0 +1,55 @@
+@import '@/assets/styles/variable';
+
+.header-layout {
+	display: grid;
+	grid-template-columns: 1fr max-content 1fr;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: @header-desktop;
+	max-width: 1230px;
+	margin: 0 auto;
+	backdrop-filter: blur(28.5px);
+	align-items: center;
+	z-index: 1;
+	grid-template-rows: 1fr;
+	background-color: @header-background;
+}
+
+.svg {
+	width: 26px;
+	height: 26px;
+}
+
+.logo {
+	margin-left: 19px;
+}
+
+.button {
+	text-decoration: none;
+	padding: 20px 32px;
+	margin: 4px 2px;
+	height: inherit;
+	touch-action: manipulation;
+	user-select: none;
+}
+
+.button-click {
+	transform: scale(0.8);
+	transition: transform 0.1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.login {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto 13px;
+	grid-column-start: 4;
+}
+
+.navigation-layout {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
