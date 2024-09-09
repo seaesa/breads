@@ -3,7 +3,7 @@ import type { ThemeConfig } from 'antd';
 
 import en from 'antd/locale/en_US';
 // import vn from 'antd/locale/vi_VN';
-const { defaultAlgorithm, darkAlgorithm } = theme;
+const { defaultAlgorithm } = theme;
 
 function App({ children }: { children: React.ReactNode }) {
 	const themeConfig: ThemeConfig = {
