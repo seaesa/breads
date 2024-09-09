@@ -1,23 +1,28 @@
-@import './assets/styles/reset';
+@url: '@/assets/styles';
+@import '@{url}/reset';
+@import '@{url}/variable.less';
 
-:root {
-	--logo-theme: #000;
+body {
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	background-color: @primary-backround-color;
+	color: @primary-text-color;
 }
 
-#logo {
-	cursor: pointer;
-	transition-property: transform;
-	text-align: inherit;
-	list-style: none;
-	-webkit-tap-highlight-color: transparent;
-	user-select: none;
-	width: 32px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	&:hover {
-		transform: scale(1.1);
-		transition: transform 0.1s linear;
-	}
+#svg {
+	height: var(--height, @height-icon, revert);
+	width: var(--width, @width-icon, revert);
+	fill: var(--fill, @fill-icon, revert);
+	color: inherit;
+	flex-shrink: 0;
+	position: relative;
+	display: block;
 }

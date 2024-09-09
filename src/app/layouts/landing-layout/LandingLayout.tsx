@@ -1,38 +1,27 @@
 import Logo from '@/assets/logo.svg?react';
-import { Button } from 'antd';
+import HomeIcon from '@/assets/icons/home-primary.svg?react';
+import SearchIcon from '@/assets/icons/search.svg?react';
+import PencilIcon from '@/assets/icons/pencil.svg?react';
+import HeartIcon from '@/assets/icons/heart.svg?react';
+import UserIcon from '@/assets/icons/user.svg?react';
+
 import styles from './LandingLayout.module.less';
 import { cn, id } from '@/lib/utils';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faMagnifyingGlass, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { Button } from '@/app/components';
 
-const { headerLayout, logo, button, svg, login, navigationLayout, buttonClick } = styles;
-
-const ButtonNavigation = ({ icon, link = '' }: { icon: IconProp; link?: string }) => {
-	const [active, setActive] = useState(false);
-	const handleMouseDown = () => {
-		setActive(true);
-	};
-	const handleMouseUp = () => {
-		setActive(false);
-	};
+type IconProps = React.FunctionComponent<React.ComponentProps<'svg'> & { title?: string }>;
+interface ButtonProps {
+	icon: IconProps;
+	link?: string;
+}
+const ButtonNavigation: React.FC<ButtonProps> = ({ icon: Icon, link }) => {
 	return (
 		<>
 			<div>
-				<Link to={link}>
-					<Button
-						onMouseDown={handleMouseDown}
-						onMouseUp={handleMouseUp}
-						className={cn(button, { [buttonClick]: active })}
-						type="text"
-						size="large"
-					>
-						<FontAwesomeIcon icon={icon} className={svg} />
-					</Button>
-				</Link>
+				<Button href={link} className={styles.button}>
+					<Icon />
+				</Button>
 			</div>
 		</>
 	);
@@ -40,46 +29,52 @@ const ButtonNavigation = ({ icon, link = '' }: { icon: IconProp; link?: string }
 const navigation = [
 	{
 		link: '/',
-		icon: faHouse,
+		icon: HomeIcon,
 	},
 	{
 		link: '/search',
-		icon: faMagnifyingGlass,
+		icon: SearchIcon,
 	},
 	{
-		icon: faPenToSquare,
+		icon: PencilIcon,
 	},
 	{
-		icon: faHeart,
+		icon: HeartIcon,
 	},
 	{
-		icon: faUser,
+		icon: UserIcon,
 	},
 ];
 const HeaderLandingLayout = () => {
 	return (
 		<>
-			<header className={cn(headerLayout)}>
-				<div className={cn(logo)}>
-					<Logo />
+			<header className={cn(styles.headerLayout)}>
+				<div className={cn(styles.logoWrap)}>
+					<Link to="/">
+						<Logo className={cn(styles.logo)} />
+					</Link>
 				</div>
-				<div className={cn(navigationLayout)}>
+				<div className={cn(styles.navigationLayout)}>
 					{navigation.map((navigate) => (
 						<ButtonNavigation icon={navigate.icon} link={navigate.link} key={id()} />
 					))}
 				</div>
-				<div className={cn(login)}>
-					<Button type="primary">Login</Button>
+				<div className={cn(styles.login)}>
+					<Button type="dashed">Login</Button>
 				</div>
 			</header>
 		</>
 	);
+};
+const FooterLandingLayout = () => {
+	return <></>;
 };
 const LandingLayout = ({ children }: { children: JSX.Element }) => {
 	return (
 		<>
 			<HeaderLandingLayout />
 			{children}
+			<FooterLandingLayout />
 		</>
 	);
 };

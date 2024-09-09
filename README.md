@@ -6,7 +6,7 @@ Quick Started:
   git clone https://github.com/seaesa/breads.git
   cd breads
   bun install
-  bun run dev
+  bun dev
 ```
 
 <h2>Learn More:</h2>

@@ -5,7 +5,15 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), svgr()],
+	plugins: [
+		react(),
+		svgr({
+			svgrOptions: {
+				memo: true,
+				icon: true,
+			},
+		}),
+	],
 	css: {
 		preprocessorOptions: {
 			less: {
