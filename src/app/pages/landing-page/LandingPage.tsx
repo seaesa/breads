@@ -6,6 +6,7 @@ import styles from './LandingPage.module.less';
 import EllipsisIcon from '@/assets/icons/ellipsis.svg?react';
 
 import { Image } from 'antd';
+import { Button } from '@/app/components';
 const Post = () => {
 	return (
 		<>
@@ -27,15 +28,16 @@ const Post = () => {
 						</div>
 					</div>
 					<div>
-						<EllipsisIcon className={cn(styles.icon)} />
+						<Button size="middle" shape="circle">
+							<EllipsisIcon className={cn(styles.icon)} />
+						</Button>
 					</div>
 				</div>
 				<div className={styles.content}>
 					<div>
 						<span className={styles.contentTitle}>
-							Angel Reese announces she will not play the rest of her rookie season
-							due to injury - what a rough moment in an otherwise incredible year. She
-							will be back, and she will be back dazzling.
+							Angel Reese announces she will not play the rest of her rookie season due to injury - what a rough moment
+							in an otherwise incredible year. She will be back, and she will be back dazzling.
 						</span>
 						<div className={styles.contentImageWrap}>
 							<div className={styles.contentImage}>

@@ -5,11 +5,11 @@
 	grid-template-columns: 1fr max-content 1fr;
 	position: fixed;
 	top: 0;
-	left: 0;
 	right: 0;
+	left: 0;
 	height: @header-desktop-height;
-	max-width: 1230px;
-	margin: 0 auto;
+	max-width: @large-screen-max-page-width;
+	margin: auto auto;
 	backdrop-filter: blur(28.5px);
 	align-items: center;
 	z-index: 1;
@@ -19,6 +19,8 @@
 
 .logoWrap {
 	margin-left: 19px;
+	width: 32px;
+	height: 32px;
 
 	.logo {
 		cursor: pointer;
@@ -27,11 +29,10 @@
 		list-style: none;
 		-webkit-tap-highlight-color: transparent;
 		user-select: none;
-		width: 32px;
-		height: 32px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		fill: @icon-color-primary;
 
 		&:hover {
 			transform: scale(1.1);
@@ -40,22 +41,21 @@
 	}
 }
 
-.login > button {
-	font-weight: 600;
-}
-
 .login {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	margin: 0 auto 13px;
-	grid-column-start: 4;
+	margin: 0 13px 0 auto;
+	grid-column-start: 3;
 }
 
-.navigation-layout {
+.navbar {
 	height: 100%;
 	display: flex;
 	align-items: center;
+	max-width: @large-screen-max-width;
+	width: 100vw;
+	padding: 0 70px;
 
 	.button {
 		text-decoration: none;
@@ -64,7 +64,7 @@
 		height: inherit;
 		touch-action: manipulation;
 		user-select: none;
-		color: @navigation-icon-color-secondary;
+		color: @navigation-icon-color;
 	}
 }
 

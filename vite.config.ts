@@ -10,7 +10,6 @@ export default defineConfig({
 		svgr({
 			svgrOptions: {
 				memo: true,
-				icon: true,
 			},
 		}),
 	],

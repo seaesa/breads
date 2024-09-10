@@ -54,7 +54,7 @@ const HeaderLandingLayout = () => {
 						<Logo className={cn(styles.logo)} />
 					</Link>
 				</div>
-				<div className={cn(styles.navigationLayout)}>
+				<div className={cn(styles.navbar)}>
 					{navigation.map((navigate) => (
 						<ButtonNavigation icon={navigate.icon} link={navigate.link} key={id()} />
 					))}

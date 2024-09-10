@@ -10,9 +10,7 @@ interface MyButtonProps extends ButtonProps {
 	href?: string;
 }
 
-const ButtonWrap = <T extends MyButtonProps>(
-	ButtonComponent: ComponentType<Omit<T, 'href'>>,
-): React.FC<T> => {
+const ButtonWrap = <T extends MyButtonProps>(ButtonComponent: ComponentType<Omit<T, 'href'>>): React.FC<T> => {
 	return ({ href, ...props }) => {
 		return (
 			<>
@@ -28,13 +26,7 @@ const ButtonWrap = <T extends MyButtonProps>(
 	};
 };
 
-const Button: React.FC<MyButtonProps> = ({
-	className,
-	children,
-	size = 'large',
-	type = 'text',
-	...props
-}) => {
+const Button: React.FC<MyButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
 	const [active, setActive] = useState(false);
 	const handleOnMouseUp = useCallback(() => {
 		setActive(false);
@@ -44,7 +36,7 @@ const Button: React.FC<MyButtonProps> = ({
 	}, []);
 	return (
 		<AntButton
-			className={cn(styles.button, { [styles.active]: active }, className)}
+			className={cn({ [styles.active]: active }, className)}
 			onMouseDown={handleOnMouseDown}
 			onMouseUp={handleOnMouseUp}
 			size={size}
