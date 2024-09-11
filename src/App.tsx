@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import en from 'antd/locale/en_US';
+import { ConfigProvider, theme } from 'antd';
+import type { ThemeConfig } from 'antd';
+import { useTheme } from './stores/theme';
+import TopLoadingbar from './providers/TopLoadingbar';
 
-function App() {
-  const [count, setCount] = useState(0)
+const { defaultAlgorithm, darkAlgorithm } = theme;
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => {
+	const { theme } = useTheme();
+	const themeConfig: ThemeConfig = {
+		algorithm: theme === 'light' ? defaultAlgorithm : darkAlgorithm,
+		hashed: false,
+	};
 
-export default App
+	// switch mode theme
+	useEffect(() => {
+		const root = window.document.documentElement;
+		root.classList.remove('light', 'dark');
+
+		if (theme === 'system') {
+			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light';
+
+			root.classList.add(systemTheme);
+			return;
+		}
+
+		root.classList.add(theme);
+	}, [theme]);
+
+	return (
+		<>
+			<TopLoadingbar />
+			<ConfigProvider theme={themeConfig} locale={en}>
+				<Outlet />
+			</ConfigProvider>
+		</>
+	);
+};
+export default App;
