@@ -1,0 +1,14 @@
+export { default as HomeIcon } from './home.svg?react';
+export { default as SearchIcon } from './search.svg?react';
+export { default as CommentIcon } from './comment.svg?react';
+export { default as HeartIcon } from './heart.svg?react';
+export { default as RepostIcon } from './repost.svg?react';
+export { default as ShareIcon } from './share.svg?react';
+export { default as UserIcon } from './user.svg?react';
+export { default as CreateIcon } from './pencil.svg?react';
+export { default as HomePrimaryIcon } from './home-primary.svg?react';
+export { default as OptionIcon } from './ellipsis.svg?react';
+export { default as HeartLightIcon } from './heart-light.svg?react';
+export { default as ArrowLeftIcon } from './arrow-left.svg?react';
+export { default as ArrowRightIcon } from './arrow-right.svg?react';
+export { default as LogoIcon } from './logo.svg?react';

@@ -1,16 +1,14 @@
-import { ComponentType, memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
+import type { ComponentType } from 'react';
 import { Button as AntButton } from 'antd';
 import type { ButtonProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-
 import styles from './Button.module.less';
 
 type MyButtonProps = Omit<ButtonProps, 'href'>;
 
-const ButtonWrap = <T extends ButtonProps>(
-	ButtonComponent: ComponentType<MyButtonProps>,
-): React.FC<T> => {
+const ButtonWrap = <T extends ButtonProps>(ButtonComponent: ComponentType<MyButtonProps>): React.FC<T> => {
 	return ({ href, ...props }) => {
 		return (
 			<>
@@ -26,13 +24,7 @@ const ButtonWrap = <T extends ButtonProps>(
 	};
 };
 
-const Button: React.FC<MyButtonProps> = ({
-	className,
-	children,
-	size = 'large',
-	type = 'text',
-	...props
-}) => {
+const Button: React.FC<MyButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
 	const [active, setActive] = useState(false);
 
 	const handleOnMouseUp = useCallback(() => {

@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import styles from './Image.module.less';
-import { ImageProps, Image as AntImage } from 'antd';
+import { Image as AntImage } from 'antd';
+import type { ImageProps } from 'antd';
 import { cn } from '@/lib/utils';
 
 const Image: React.FC<ImageProps> = ({ src, className, rootClassName, ...props }) => {
