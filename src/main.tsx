@@ -1,14 +1,14 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './global.less';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './configs/routes.tsx';
-import App from './App.tsx';
 
+// config router
+import { router } from './configs/routes.tsx';
+// import css
+import '/node_modules/antd/dist/reset.css';
+import './global.less';
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<App>
-			<RouterProvider router={router} />
-		</App>
+		<RouterProvider router={router} />
 	</StrictMode>,
 );

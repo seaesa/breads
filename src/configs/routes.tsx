@@ -1,20 +1,34 @@
+import App from '@/App';
 import ErrorPage from '@/app/pages/error-page/ErrorPage';
 import LangdingPage from '@/app/pages/landing-page/LandingPage';
-import SearchPage from '@/app/pages/search-page/SearchPage';
 import { createBrowserRouter } from 'react-router-dom';
-
 const router = createBrowserRouter([
 	{
-		path: '/',
-		element: <LangdingPage />,
-	},
-	{
-		path: '/search',
-		element: <SearchPage />,
-	},
-	{
-		path: '*',
-		element: <ErrorPage />,
+		element: <App />,
+		children: [
+			{
+				path: '/',
+				element: <LangdingPage />,
+			},
+			{
+				path: '/search',
+				lazy: async () => {
+					let { SearchPage } = await import('@/app/pages');
+					return { Component: SearchPage };
+				},
+			},
+			{
+				path: '/login',
+				lazy: async () => {
+					let { LoginPage } = await import('@/app/pages');
+					return { Component: LoginPage };
+				},
+			},
+			{
+				path: '*',
+				element: <ErrorPage />,
+			},
+		],
 	},
 ]);
 

@@ -1,8 +1,11 @@
 import { Footer } from 'antd/es/layout/layout';
 import styles from './ErrorPage.module.less';
 import { Button } from '@/app/components';
-import { FloatButton } from 'antd';
+import { useEffect } from 'react';
 const ErrorPage = () => {
+	useEffect(() => {
+		console.log(`render`);
+	}, []);
 	return (
 		<>
 			<div>
@@ -13,7 +16,6 @@ const ErrorPage = () => {
 				<Button type="primary">Back</Button>
 			</div>
 			<Footer />
-			<FloatButton shape="square" type="primary" style={{ insetInlineEnd: 24 }} />
 		</>
 	);
 };

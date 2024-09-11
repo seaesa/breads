@@ -1,39 +1,19 @@
 @import '@/assets/styles/variable';
 
-.containerWrap {
+.postWrap + .postWrap {
+	border-top: solid 0.5px @outline-color-primary;
+}
+
+.contentWrap {
 	display: flex;
 	flex-direction: column;
-	z-index: 0;
-
-	.containerChild {
-		position: relative;
-		top: @header-desktop-height;
-		min-height: calc(100vh - @header-desktop-height);
-
-		.container {
-			margin: 0 auto;
-			width: 100%;
-			z-index: 1;
-			flex-grow: 1;
-			height: auto;
-
-			@media screen and (min-width: 768px) {
-				max-width: @large-screen-max-width;
-				padding: 0 24px;
-			}
-		}
-	}
 }
 
 .postWrap {
 	display: grid;
 	grid-template-columns: 48px minmax(0, 1fr);
-	grid-template-rows: min-content 19px max-content max-content;
-
-	.contentWrap {
-		display: flex;
-		flex-direction: column;
-	}
+	grid-template-rows: 21px 19px max-content max-content;
+	padding: 12px 0;
 
 	.avatar {
 		padding-top: 4px;
@@ -76,7 +56,13 @@
 			}
 		}
 
-		// .time {}
+		.time {
+			color: @text-color-secondary;
+			font-size: 1.5rem;
+			word-wrap: break-word;
+			text-align: inherit;
+			white-space: nowrap;
+		}
 	}
 
 	.icon {
@@ -88,13 +74,16 @@
 		grid-column-start: 2;
 		grid-row-start: 2;
 
-		.contentTitle {
-			margin-top: 3px;
+		.title {
 			overflow: hidden;
 			overflow-wrap: anywhere;
 			font-size: 1.5rem;
-			line-height: 140%;
+			line-height: 1.4;
 			white-space: pre-wrap;
+		}
+
+		.contentTitle {
+			margin-top: 6px;
 		}
 
 		.contentImageWrap {
@@ -102,37 +91,17 @@
 
 			.contentImage {
 				max-height: @image-maxHeight;
-				aspect-ratio: @image-aspectRatio;
 				display: grid;
 				grid-template-rows: minmax(0, 1fr);
 				grid-template-columns: minmax(0, 1fr);
 				user-select: none;
 				border-radius: 8px;
 				overflow: hidden;
-
-				.image {
-					border-radius: 8px;
-					object-fit: cover;
-				}
 			}
 		}
 	}
 
 	.action {
-		display: flex;
-		margin: 6px -8px -4px 0;
-
-		.actionIcon {
-			display: flex;
-
-			.icon {
-				--fill: transparent;
-				--width: 20px;
-				--height: 20px;
-				stroke-width: 2;
-				stroke: currentColor;
-				color: @action-icon-color !important;
-			}
-		}
+		margin: 10px 0 0 -16px;
 	}
 }

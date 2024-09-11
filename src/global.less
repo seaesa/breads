@@ -2,12 +2,14 @@
 
 :root {
 	--text-color-primary: rgb(0, 0, 0);
+	--text-color-secondary: rgb(153, 153, 153);
 	--navigation-icon-color: rgb(184, 184, 184);
 	--header-background-color: rgba(255, 255, 255, 0.85);
 	--action-icon-color: rgb(8, 4, 4);
 	--backround-color-primary: rgb(255, 255, 255);
 	--icon-color-primary: var(--text-color-primary);
 	--icon-color-secondary: rgb(153, 153, 153);
+	--outline-color-primary: rgba(0, 0, 0, 0.15);
 
 	--width: 26px;
 	--height: 26px;
@@ -51,4 +53,9 @@ html {
 	flex-shrink: 0;
 	position: relative;
 	display: block;
+}
+
+.stroke {
+	stroke: currentColor;
+	stroke-width: 2px;
 }

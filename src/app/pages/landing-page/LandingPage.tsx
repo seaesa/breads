@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils';
 import styles from './LandingPage.module.less';
 import EllipsisIcon from '@/assets/icons/ellipsis.svg?react';
 
-import { Image } from 'antd';
-import { Button } from '@/app/components';
+import { Button, PostActions } from '@/app/components';
+import { Image } from '@/app/components';
 const Post = () => {
 	return (
 		<>
@@ -16,6 +16,7 @@ const Post = () => {
 						<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
 					</Link>
 				</div>
+
 				<div className={styles.title}>
 					<div className={styles.titleHeading}>
 						<Link className={styles.titleLink} to="">
@@ -35,20 +36,19 @@ const Post = () => {
 				</div>
 				<div className={styles.content}>
 					<div>
-						<span className={styles.contentTitle}>
-							Angel Reese announces she will not play the rest of her rookie season due to injury - what a rough moment
-							in an otherwise incredible year. She will be back, and she will be back dazzling.
-						</span>
+						{/* <div className={styles.contentTitle}>
+              <span className={styles.title}>
+                Angel Reese announces she will not play the rest of her rookie season due to injury - what a rough moment
+                in an otherwise incredible year. She will be back, and she will be back dazzling.
+              </span>
+            </div> */}
 						<div className={styles.contentImageWrap}>
 							<div className={styles.contentImage}>
-								<Image
-									className={styles.image}
-									src="https://images.pexels.com/photos/25189483/pexels-photo-25189483/free-photo-of-close-up-of-orchids.jpeg"
-								/>
+								<Image src="https://images.pexels.com/photos/27244360/pexels-photo-27244360/free-photo-of-car-by-maelifell-on-iceland.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
 							</div>
 						</div>
 						<div className={styles.action}>
-							<div className={styles.actionIcon}></div>
+							<PostActions />
 						</div>
 					</div>
 				</div>
@@ -61,14 +61,12 @@ const LangdingPage = () => {
 	return (
 		<>
 			<LandingLayout>
-				<div className={styles.containerWrap}>
-					<div className={styles.containerChild}>
-						<div className={cn(styles.container)}>
-							<div className={cn(styles.contentWrap)}>
-								<Post />
-							</div>
-						</div>
-					</div>
+				<div className={cn(styles.contentWrap)}>
+					<Post />
+					<Post />
+					<Post />
+					<Post />
+					<Post />
 				</div>
 			</LandingLayout>
 		</>

@@ -6,11 +6,11 @@ import { cn } from '@/lib/utils';
 
 import styles from './Button.module.less';
 
-interface MyButtonProps extends ButtonProps {
-	href?: string;
-}
+type MyButtonProps = Omit<ButtonProps, 'href'>;
 
-const ButtonWrap = <T extends MyButtonProps>(ButtonComponent: ComponentType<Omit<T, 'href'>>): React.FC<T> => {
+const ButtonWrap = <T extends ButtonProps>(
+	ButtonComponent: ComponentType<MyButtonProps>,
+): React.FC<T> => {
 	return ({ href, ...props }) => {
 		return (
 			<>
@@ -26,22 +26,31 @@ const ButtonWrap = <T extends MyButtonProps>(ButtonComponent: ComponentType<Omit
 	};
 };
 
-const Button: React.FC<MyButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
+const Button: React.FC<MyButtonProps> = ({
+	className,
+	children,
+	size = 'large',
+	type = 'text',
+	...props
+}) => {
 	const [active, setActive] = useState(false);
+
 	const handleOnMouseUp = useCallback(() => {
 		setActive(false);
 	}, []);
+
 	const handleOnMouseDown = useCallback(() => {
 		setActive(true);
 	}, []);
+
 	return (
 		<AntButton
+			{...props}
 			className={cn({ [styles.active]: active }, className)}
 			onMouseDown={handleOnMouseDown}
 			onMouseUp={handleOnMouseUp}
 			size={size}
 			type={type}
-			{...props}
 		>
 			{children}
 		</AntButton>

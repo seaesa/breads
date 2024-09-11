@@ -32,4 +32,5 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
+	envPrefix: 'BREADS_',
 });

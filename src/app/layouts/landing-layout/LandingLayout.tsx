@@ -66,15 +66,60 @@ const HeaderLandingLayout = () => {
 		</>
 	);
 };
+const footer = [
+	{
+		name: '© 2024',
+	},
+	{
+		name: 'Threads Terms',
+		link: '...',
+	},
+	{
+		name: 'Privacy Policy',
+		link: '...',
+	},
+	{
+		name: 'Cookies Policy',
+		link: '...',
+	},
+	{
+		name: 'Report a problem',
+		link: '...',
+	},
+];
 const FooterLandingLayout = () => {
-	return <></>;
+	return (
+		<>
+			<div className={styles.footerWrap}>
+				<ul className={styles.footer}>
+					{footer.map((footer) =>
+						!footer.link ? (
+							<li key={id()} className={styles.footerName}>
+								{footer.name}
+							</li>
+						) : (
+							<li key={id()} className={styles.footerName}>
+								<Link to={footer.link}>{footer.name}</Link>
+							</li>
+						),
+					)}
+				</ul>
+			</div>
+		</>
+	);
 };
 const LandingLayout = ({ children }: { children: JSX.Element }) => {
 	return (
 		<>
 			<HeaderLandingLayout />
-			{children}
-			<FooterLandingLayout />
+			<div className={styles.containerWrap}>
+				<div className={styles.containerChild}>
+					<div className={styles.container}>
+						<div className={styles.main}>{children}</div>
+						<FooterLandingLayout />
+					</div>
+				</div>
+			</div>
 		</>
 	);
 };
