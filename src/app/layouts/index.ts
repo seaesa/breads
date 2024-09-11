@@ -1,1 +1,1 @@
-export { default as LandingLayout } from './landing-layout/LandingLayout';
+export { default as LandingLayout } from './LandingLayout/LandingLayout';

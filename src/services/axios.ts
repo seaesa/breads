@@ -1,11 +1,6 @@
-import { handleAxiosErorr } from '@/configs/error';
-import axios, {
-	AxiosError,
-	AxiosInstance,
-	AxiosRequestConfig,
-	AxiosResponse,
-	CreateAxiosDefaults,
-} from 'axios';
+import { handleAxiosErorr } from '@/helpers/error';
+import axios, { AxiosError } from 'axios';
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDefaults } from 'axios';
 
 // config request to server
 class Http<T extends CreateAxiosDefaults> {

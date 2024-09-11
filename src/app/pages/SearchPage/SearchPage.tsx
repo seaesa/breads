@@ -1,4 +1,4 @@
-import LandingLayout from '@/app/layouts/landing-layout/LandingLayout';
+import LandingLayout from '@/app/layouts/LandingLayout/LandingLayout';
 import { Flex } from 'antd';
 import styles from './SearchPage.module.less';
 import SearchIcon from '@/assets/icons/search.svg?react';

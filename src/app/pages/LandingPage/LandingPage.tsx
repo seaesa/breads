@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Avatar } from 'antd';
-import LandingLayout from '@/app/layouts/landing-layout/LandingLayout';
+import { LandingLayout } from '@/app/layouts';
 import { cn } from '@/lib/utils';
 import styles from './LandingPage.module.less';
-import EllipsisIcon from '@/assets/icons/ellipsis.svg?react';
+import { OptionIcon } from '@/assets/icons';
 
 import { Button, PostActions } from '@/app/components';
 import { Image } from '@/app/components';
@@ -30,7 +30,7 @@ const Post = () => {
 					</div>
 					<div>
 						<Button size="middle" shape="circle">
-							<EllipsisIcon className={cn(styles.icon)} />
+							<OptionIcon className={cn(styles.icon)} />
 						</Button>
 					</div>
 				</div>
