@@ -5,6 +5,7 @@ type ThemeProps = {
 	theme: Theme;
 	setTheme: (theme: Theme) => void;
 };
+
 const useThemeStore = create<ThemeProps>((set) => ({
 	theme: (localStorage.getItem('mode') as Theme) || 'system',
 	setTheme: (theme) => {
