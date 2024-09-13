@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 interface TextProps {
-	type: 'link' | 'text' | 'title';
-	href?: string;
-	children: React.ReactNode;
+  type: 'link' | 'text' | 'title';
+  href?: string;
+  children: React.ReactNode;
 }
 const Text = (): TypographyProps => {
-	return Typography;
+  return Typography;
 };
 export default Text;

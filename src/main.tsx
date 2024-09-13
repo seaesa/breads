@@ -6,7 +6,7 @@ import '/node_modules/antd/dist/reset.css';
 import './global.less';
 
 createRoot(document.getElementById('root')!).render(
-	<StrictMode>
-		<RouterProvider router={router} />
-	</StrictMode>,
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
 );
