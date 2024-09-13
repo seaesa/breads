@@ -14,4 +14,4 @@ const useThemeStore = create<ThemeProps>((set) => ({
 	},
 }));
 
-export const useTheme = () => useThemeStore((state) => ({ theme: state.theme, setTheme: state.setTheme }));
+export const useTheme = () => useThemeStore((state) => state);

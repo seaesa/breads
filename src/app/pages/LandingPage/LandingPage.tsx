@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Avatar, Typography } from 'antd';
-import { LandingLayout } from '@/app/layouts';
 import { cn } from '@/lib/utils';
-import styles from './LandingPage.module.less';
+import { LandingLayout } from '@/app/layouts';
 import { OptionIcon } from '@/assets/icons';
+import { Button, PostActions, Image } from '@/app/components';
+import styles from './LandingPage.module.less';
 
-import { Button, PostActions } from '@/app/components';
-import { Image } from '@/app/components';
 const Post = () => {
 	return (
 		<>
