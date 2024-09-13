@@ -13,3 +13,6 @@ export { default as ArrowLeftIcon } from './arrow-left.svg?react';
 export { default as ArrowRightIcon } from './arrow-right.svg?react';
 export { default as LogoIcon } from './logo.svg?react';
 export { default as CloseIcon } from './close.svg?react';
+export { default as PostIcon } from './post.svg?react';
+export { default as AngleRightIcon } from './angle-right.svg?react';
+export { default as AngleLeftIcon } from './angle-left.svg?react';

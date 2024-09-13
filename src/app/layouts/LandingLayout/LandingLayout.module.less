@@ -46,6 +46,12 @@
   z-index: 1;
   grid-template-rows: 1fr;
   background-color: @header-background-color;
+
+  .icon {
+    --width: 26px;
+    --height: 26px;
+    --fill: transparent;
+  }
 }
 
 .logoWrap {
@@ -126,7 +132,7 @@
   }
 
   .footerName,
-  .footerName > a {
+  .footerName>a {
     overflow: visible;
     min-width: 0;
     max-width: 100%;
@@ -141,12 +147,12 @@
     color: @text-color-secondary;
   }
 
-  .footerName + .footerName {
+  .footerName+.footerName {
     cursor: pointer;
     margin-left: 12px;
 
     &:hover,
-    &:hover > a {
+    &:hover>a {
       text-decoration: underline;
     }
   }

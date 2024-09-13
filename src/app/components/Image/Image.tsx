@@ -9,19 +9,22 @@ const Image: React.FC<ImageProps> = ({ src, className, rootClassName, ...props }
   return (
     <>
       <AntImage
-        {...props}
-        rootClassName={cn(styles.imagePreview, rootClassName)}
+        rootClassName={cn(styles.rootClassName, rootClassName)}
         className={cn(styles.image, className)}
         src={src}
         preview={{
+          className: styles.preview,
+          mask: false,
           movable: false,
           scaleStep: 0,
           destroyOnClose: true,
           toolbarRender: () => null,
+          imageRender: () => <img src={src} className={styles.previewImage} />,
           icons: {
-            close: <CloseIcon />,
+            close: <CloseIcon className={cn('stroke')} />,
           },
         }}
+        {...props}
       />
     </>
   );

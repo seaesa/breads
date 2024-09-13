@@ -3,7 +3,7 @@ import { Avatar, Typography } from 'antd';
 import { cn } from '@/lib/utils';
 import { LandingLayout } from '@/app/layouts';
 import { OptionIcon } from '@/assets/icons';
-import { Button, PostActions, Image } from '@/app/components';
+import { Button, PostActions, Image, Dialog } from '@/app/components';
 import styles from './LandingPage.module.less';
 
 const Post = () => {
@@ -66,6 +66,7 @@ const LandingPage = () => {
           <Post />
         </div>
       </LandingLayout>
+      <Dialog />
     </>
   );
 };
