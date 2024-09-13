@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useState } from 'react';
 import type { ComponentType } from 'react';
 import { Button as AntButton } from 'antd';
 import type { ButtonProps } from 'antd';
@@ -8,16 +8,16 @@ import styles from './Button.module.less';
 
 type MyButtonProps = Omit<ButtonProps, 'href'>;
 
-const ButtonWrap = <T extends ButtonProps>(ButtonComponent: ComponentType<MyButtonProps>): React.FC<T> => {
+const ButtonWrap = <T extends ButtonProps>(Component: ComponentType<MyButtonProps>): React.FC<T> => {
 	return ({ href, ...props }) => {
 		return (
 			<>
 				{href ? (
 					<Link to={href}>
-						<ButtonComponent {...props} />
+						<Component {...props} />
 					</Link>
 				) : (
-					<ButtonComponent {...props} />
+					<Component {...props} />
 				)}
 			</>
 		);
@@ -27,13 +27,13 @@ const ButtonWrap = <T extends ButtonProps>(ButtonComponent: ComponentType<MyButt
 const Button: React.FC<MyButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
 	const [active, setActive] = useState(false);
 
-	const handleOnMouseUp = useCallback(() => {
+	const handleOnMouseUp = () => {
 		setActive(false);
-	}, []);
+	};
 
-	const handleOnMouseDown = useCallback(() => {
+	const handleOnMouseDown = () => {
 		setActive(true);
-	}, []);
+	};
 
 	return (
 		<AntButton

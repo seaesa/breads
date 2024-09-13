@@ -1,4 +1,4 @@
-import { HomeIcon, SearchIcon, ShareIcon, HeartIcon, UserIcon } from '@/assets/icons';
+import { HomePrimaryIcon, SearchIcon, HeartIcon, UserIcon, CreateIcon } from '@/assets/icons';
 import type { FooterConfig, HeaderConfig } from '@/types/navigation';
 
 export interface NavigationConfig {
@@ -11,7 +11,7 @@ export const navigationConfig: NavigationConfig = {
 		{
 			title: 'Home',
 			href: '/',
-			icon: HomeIcon,
+			icon: HomePrimaryIcon,
 		},
 		{
 			title: 'Search',
@@ -20,7 +20,7 @@ export const navigationConfig: NavigationConfig = {
 		},
 		{
 			title: 'Create',
-			icon: ShareIcon,
+			icon: CreateIcon,
 		},
 		{
 			title: 'Activity',

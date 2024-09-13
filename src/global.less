@@ -1,61 +1,54 @@
 @import '@/assets/styles/variable.less';
 
 :root {
-	--text-color-primary: rgb(0, 0, 0);
-	--text-color-secondary: rgb(153, 153, 153);
-	--navigation-icon-color: rgb(184, 184, 184);
-	--header-background-color: rgba(255, 255, 255, 0.85);
-	--action-icon-color: rgb(8, 4, 4);
-	--backround-color-primary: rgb(255, 255, 255);
-	--icon-color-primary: var(--text-color-primary);
-	--icon-color-secondary: rgb(153, 153, 153);
-	--outline-color-primary: rgba(0, 0, 0, 0.15);
+  --text-color-primary: rgb(0, 0, 0);
+  --text-color-secondary: rgb(153, 153, 153);
+  --navigation-icon-color: rgb(184, 184, 184);
+  --header-background-color: rgba(255, 255, 255, 0.85);
+  --action-icon-color: rgb(8, 4, 4);
+  --backround-color-primary: rgb(255, 255, 255);
+  --icon-color-primary: var(--text-color-primary);
+  --icon-color-secondary: rgb(153, 153, 153);
+  --outline-color-primary: rgba(0, 0, 0, 0.15);
 
-	--width: 26px;
-	--height: 26px;
-	--fill: transparent;
+  --width: 26px;
+  --height: 26px;
+  --fill: transparent;
 }
 
 :root.dark {
-	--text-color-primary: rgb(255, 255, 255);
-	--navigation-icon-color: rgb(77, 77, 77);
-	--header-background-color: rgba(16, 16, 16, 0.85);
-	--action-icon-color: rgb(66, 66, 66);
-	--backround-color-primary: rgb(16, 16, 16);
-	--icon-color-primary: rgb(243, 245, 247);
-	--icon-color-secondary: rgb(153, 153, 153);
+  --text-color-primary: rgb(255, 255, 255);
+  --navigation-icon-color: rgb(77, 77, 77);
+  --header-background-color: rgba(16, 16, 16, 0.85);
+  --action-icon-color: rgb(66, 66, 66);
+  --backround-color-primary: rgb(16, 16, 16);
+  --icon-color-primary: rgb(243, 245, 247);
+  --icon-color-secondary: rgb(153, 153, 153);
 }
 
 body {
-	font-family:
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	background-color: @backround-color-primary;
-	color: @text-color-primary;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
+  font-weight: 400;
+  font-style: normal;
+  background-color: @backround-color-primary;
+  color: @text-color-primary;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 #svg {
-	height: var(--height, revert);
-	width: var(--width, revert);
-	fill: var(--fill, revert);
-	color: inherit;
-	flex-shrink: 0;
-	position: relative;
-	display: block;
+  height: var(--height, revert);
+  width: var(--width, revert);
+  fill: var(--fill, revert);
+  color: inherit;
+  flex-shrink: 0;
+  position: relative;
+  display: block;
 }
 
 .stroke {
-	stroke: currentColor;
-	stroke-width: 2px;
+  stroke: currentColor;
+  stroke-width: 2px;
 }

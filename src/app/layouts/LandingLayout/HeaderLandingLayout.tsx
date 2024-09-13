@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime';
-import { LogoIcon } from '@/assets/icons';
-import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { LogoIcon } from '@/assets/icons';
+import { cn, id } from '@/lib/utils';
 import { Button } from '@/app/components';
 import { navigationConfig } from '@/configs/navigation';
 import styles from './LandingLayout.module.less';
@@ -19,7 +19,7 @@ const HeaderLandingLayout = () => {
 					{navigationConfig.header.map((navigation) => {
 						const Icon = navigation.icon ? navigation.icon : Fragment;
 						return (
-							<div>
+							<div key={id()}>
 								<Button href={navigation.href} className={styles.button}>
 									<Icon />
 								</Button>
@@ -34,4 +34,5 @@ const HeaderLandingLayout = () => {
 		</>
 	);
 };
+
 export default HeaderLandingLayout;

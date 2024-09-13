@@ -1,6 +1,5 @@
 import App from '@/App';
-import ErrorPage from '@/app/pages/ErrorPage/ErrorPage';
-import LangdingPage from '@/app/pages/LandingPage/LandingPage';
+import { ErrorPage, LandingPage } from '@/app/pages';
 import { createBrowserRouter } from 'react-router-dom';
 const router = createBrowserRouter([
 	{
@@ -8,7 +7,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <LangdingPage />,
+				element: <LandingPage />,
 			},
 			{
 				path: '/search',

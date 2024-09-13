@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Avatar } from 'antd';
-import { LandingLayout } from '@/app/layouts';
+import { Avatar, Typography } from 'antd';
 import { cn } from '@/lib/utils';
-import styles from './LandingPage.module.less';
+import { LandingLayout } from '@/app/layouts';
 import { OptionIcon } from '@/assets/icons';
+import { Button, PostActions, Image } from '@/app/components';
+import styles from './LandingPage.module.less';
 
-import { Button, PostActions } from '@/app/components';
-import { Image } from '@/app/components';
 const Post = () => {
 	return (
 		<>
@@ -36,12 +35,12 @@ const Post = () => {
 				</div>
 				<div className={styles.content}>
 					<div>
-						{/* <div className={styles.contentTitle}>
-              <span className={styles.title}>
-                Angel Reese announces she will not play the rest of her rookie season due to injury - what a rough moment
-                in an otherwise incredible year. She will be back, and she will be back dazzling.
-              </span>
-            </div> */}
+						<div className={styles.contentTitle}>
+							<Typography.Text className={styles.title}>
+								Angel Reese announces she will not play the rest of her rookie season due to injury - what a rough
+								moment in an otherwise incredible year. She will be back, and she will be back dazzling.
+							</Typography.Text>
+						</div>
 						<div className={styles.contentImageWrap}>
 							<div className={styles.contentImage}>
 								<Image src="https://images.pexels.com/photos/27244360/pexels-photo-27244360/free-photo-of-car-by-maelifell-on-iceland.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
@@ -57,13 +56,11 @@ const Post = () => {
 	);
 };
 
-const LangdingPage = () => {
+const LandingPage = () => {
 	return (
 		<>
 			<LandingLayout>
 				<div className={cn(styles.contentWrap)}>
-					<Post />
-					<Post />
 					<Post />
 					<Post />
 					<Post />
@@ -72,4 +69,4 @@ const LangdingPage = () => {
 		</>
 	);
 };
-export default LangdingPage;
+export default LandingPage;

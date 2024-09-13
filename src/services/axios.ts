@@ -1,3 +1,4 @@
+import { environment } from '@/configs/env';
 import { handleAxiosErorr } from '@/helpers/error';
 import axios, { AxiosError } from 'axios';
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDefaults } from 'axios';
@@ -70,5 +71,5 @@ class Http<T extends CreateAxiosDefaults> {
 }
 
 export const http = new Http({
-	baseURL: import.meta.env.BREADS__API_SERVER,
+	baseURL: environment.apiUrl,
 });

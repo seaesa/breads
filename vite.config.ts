@@ -1,11 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import svgr from 'vite-plugin-svgr';
+import legacy from '@vitejs/plugin-legacy';
 import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
+		legacy({
+			targets: ['defaults', 'not IE 11'],
+		}),
 		react(),
 		svgr({
 			svgrOptions: {
@@ -33,4 +36,7 @@ export default defineConfig({
 		},
 	},
 	envPrefix: 'BREADS_',
+	server: {
+		host: true,
+	},
 });

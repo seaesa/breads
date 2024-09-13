@@ -16,6 +16,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 		root.classList.add(theme);
 	}, [theme]);
 
-	return <>{children}</>;
+	return children;
 };
+
 export default ThemeProvider;
