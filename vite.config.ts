@@ -9,34 +9,23 @@ export default defineConfig({
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
-    react(),
+    react({
+      jsxImportSource: '@emotion/react',
+      plugins: [['@swc/plugin-emotion', {}]],
+    }),
     svgr({
       svgrOptions: {
         memo: true,
       },
     }),
   ],
-  css: {
-    preprocessorOptions: {
-      less: {
-        math: 'always',
-        relativeUrls: true,
-        javascriptEnabled: true,
-      },
-    },
-    modules: {
-      generateScopedName: '[hash:base64:10]',
-      hashPrefix: 'breads',
-      localsConvention: 'camelCaseOnly',
-    },
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  envPrefix: 'BREADS_',
   server: {
     host: true,
   },
+  envPrefix: 'BREADS_',
 });

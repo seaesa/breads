@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Avatar, Typography } from 'antd';
+import { Avatar, Col, Divider, Flex, Row, Typography } from 'antd';
 import { cn } from '@/lib/utils';
 import { LandingLayout } from '@/app/layouts';
 import { OptionIcon } from '@/assets/icons';
@@ -9,34 +9,31 @@ import styles from './LandingPage.module.less';
 const Post = () => {
   return (
     <>
-      <div className={styles.postWrap}>
-        <div className={styles.avatar}>
-          <Link to="">
-            <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
-          </Link>
-        </div>
-
-        <div className={styles.title}>
-          <div className={styles.titleHeading}>
-            <Link className={styles.titleLink} to="">
-              james_photography89
-            </Link>
-            <div>
-              <time dateTime={new Date().toLocaleDateString()} title="time">
-                <span className={styles.time}>14h</span>
-              </time>
+      <div>
+        <Row style={{ padding: '12px 0' }}>
+          <Col span={2}>
+            <div className={styles.avatar}>
+              <Link to="">
+                <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
+              </Link>
             </div>
-          </div>
-          <div>
-            <Button size="middle" shape="circle">
-              <OptionIcon className={cn(styles.icon)} />
-            </Button>
-          </div>
-        </div>
-        <div className={styles.content}>
-          <div>
+          </Col>
+          <Col span={22}>
+            <Flex align="center">
+              <Flex gap={6} flex={1} align="center">
+                <Link className={styles.titleLink} to="">
+                  <Typography.Text>james_photography89</Typography.Text>
+                </Link>
+                <time dateTime={new Date().toLocaleDateString()} title="time">
+                  <Typography.Text className={styles.time}>14h</Typography.Text>
+                </time>
+              </Flex>
+              <Button size="middle" shape="circle">
+                <OptionIcon className={cn(styles.icon)} />
+              </Button>
+            </Flex>
             <div className={styles.contentTitle}>
-              <Typography.Text className={styles.title}>
+              <Typography.Text>
                 Angel Reese announces she will not play the rest of her rookie season due to injury - what a rough
                 moment in an otherwise incredible year. She will be back, and she will be back dazzling.
               </Typography.Text>
@@ -49,8 +46,9 @@ const Post = () => {
             <div className={styles.action}>
               <PostActions />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
+        <Divider type="horizontal" />
       </div>
     </>
   );
@@ -60,11 +58,11 @@ const LandingPage = () => {
   return (
     <>
       <LandingLayout>
-        <div className={cn(styles.contentWrap)}>
+        <Flex vertical>
           <Post />
           <Post />
           <Post />
-        </div>
+        </Flex>
       </LandingLayout>
       <Dialog />
     </>

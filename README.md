@@ -12,6 +12,5 @@ Quick Started:
 <h2>Learn More:</h2>
 
 - [ReactJs](https://react.dev/) combine with [Typescript](https://typescriptlang.org/) for building UI
-- [Ant Design](https://ant.design/) combine with [Less Css](https://lesscss.org/) for styling
-- [Zustand](https://zustand-demo.pmnd.rs/) for state management
-- [React Query](https://tanstack.com/query/) for fetch data
+- [Ant Design](https://ant.design/) with Css-In-Js for styling
+- [Zustand](https://zustand-demo.pmnd.rs/) for state management 

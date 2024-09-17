@@ -24,6 +24,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: '/:userId',
+        lazy: async () => {
+          let { UserPage } = await import('@/app/pages');
+          return { Component: UserPage };
+        },
+      },
+      {
         path: '*',
         element: <ErrorPage />,
       },

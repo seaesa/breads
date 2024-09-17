@@ -1,10 +1,9 @@
 import { memo, useState } from 'react';
 import type { ComponentType } from 'react';
-import { Button as AntButton } from 'antd';
 import type { ButtonProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import styles from './Button.module.less';
+import { Button } from './Button.styles';
 
 type MyButtonProps = Omit<ButtonProps, 'href'>;
 
@@ -24,7 +23,7 @@ const ButtonWrap = <T extends ButtonProps>(Component: ComponentType<MyButtonProp
   };
 };
 
-const Button: React.FC<MyButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
+const MyButton: React.FC<MyButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
   const [active, setActive] = useState(false);
 
   const handleOnMouseUp = () => {
@@ -36,17 +35,18 @@ const Button: React.FC<MyButtonProps> = ({ className, children, size = 'large', 
   };
 
   return (
-    <AntButton
-      {...props}
-      className={cn({ [styles.active]: active }, className)}
+    <Button
+      className={cn({ active: active }, className)}
       onMouseDown={handleOnMouseDown}
       onMouseUp={handleOnMouseUp}
       size={size}
       type={type}
+      {...props}
     >
       {children}
-    </AntButton>
+    </Button>
   );
 };
+MyButton.displayName = 'Button';
 
-export default memo(ButtonWrap(Button));
+export default memo(ButtonWrap(MyButton));

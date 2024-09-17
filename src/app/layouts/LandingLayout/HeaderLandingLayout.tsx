@@ -5,31 +5,40 @@ import { cn, id } from '@/lib/utils';
 import { Button, Icon } from '@/app/components';
 import { navigationConfig } from '@/configs/navigation';
 import styles from './LandingLayout.module.less';
+import { Col, Flex, Row } from 'antd';
 
 const HeaderLandingLayout = () => {
   return (
     <>
-      <header className={cn(styles.headerLayout)}>
-        <div className={cn(styles.logoWrap)}>
-          <Link to="/">
-            <LogoIcon className={cn(styles.logo)} />
-          </Link>
-        </div>
-        <div className={cn(styles.navbar)}>
-          {navigationConfig.header.map((navigation) => {
-            return (
-              <div key={id()}>
-                <Button href={navigation.href} className={styles.button}>
-                  <Icon icon={navigation.icon || Fragment} className={styles.icon} />
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-        <div className={cn(styles.login)}>
+      <Row align="middle" justify="space-between" className={cn(styles.headerLayout)}>
+        <Col>
+          <div className={cn(styles.logoWrap)}>
+            <Link to="/">
+              <LogoIcon className={cn(styles.logo)} />
+            </Link>
+          </div>
+        </Col>
+        <Col>
+          <Flex align="center" className={cn(styles.navbar)}>
+            {navigationConfig.header.map((navigation) => {
+              return (
+                <div key={id()}>
+                  <Button href={navigation.href} className={styles.button}>
+                    <Icon icon={navigation.icon || Fragment} className={styles.icon} />
+                  </Button>
+                </div>
+              );
+            })}
+          </Flex>
+        </Col>
+        <Col
+          style={{
+            marginRight: '13px',
+          }}
+        >
           <Button type="primary">Login</Button>
-        </div>
-      </header>
+        </Col>
+      </Row>
     </>
   );
 };

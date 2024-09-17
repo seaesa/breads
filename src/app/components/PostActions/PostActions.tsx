@@ -6,22 +6,23 @@ import ShareIcon from '@/assets/icons/share.svg?react';
 
 import styles from './PostActions.module.less';
 import Button from '../Button/Button';
+import Icon from '../Icon/Icon';
 
 const PostActions = () => {
   return (
     <>
       <div className={styles.actionWrap}>
         <Button shape="round" size="middle">
-          <HeartLightIcon />
+          <Icon icon={HeartLightIcon} className="classSvg"></Icon>
         </Button>
         <Button shape="round" size="middle">
-          <CommentIcon />
+          <Icon icon={CommentIcon} className="classSvg"></Icon>
         </Button>
         <Button shape="round" size="middle">
-          <RepostIcon />
+          <Icon icon={RepostIcon}></Icon>
         </Button>
         <Button shape="round" size="middle">
-          <ShareIcon />
+          <Icon icon={ShareIcon} className="classSvg"></Icon>
         </Button>
       </div>
     </>
