@@ -1,15 +1,15 @@
 import LandingLayout from '@/app/layouts/LandingLayout/LandingLayout';
 import { Flex } from 'antd';
-import styles from './SearchPage.module.less';
+import { styles } from './SearchPage.styles';
 import SearchIcon from '@/assets/icons/search.svg?react';
 const SearchPage = () => {
   return (
     <>
       <LandingLayout>
-        <Flex vertical className={styles.searchWrap}>
-          <div className={styles.searchBox}>
-            <SearchIcon className={styles.searchIcon} />
-            <input type="text" className={styles.searchInput} />
+        <Flex vertical css={styles} className="searchWrap">
+          <div className="searchBox">
+            <SearchIcon className="searchIcon" />
+            <input type="text" className="searchInput" />
           </div>
         </Flex>
       </LandingLayout>

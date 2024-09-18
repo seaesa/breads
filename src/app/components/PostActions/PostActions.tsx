@@ -3,15 +3,14 @@ import HeartLightIcon from '@/assets/icons/heart-light.svg?react';
 import CommentIcon from '@/assets/icons/comment.svg?react';
 import RepostIcon from '@/assets/icons/repost.svg?react';
 import ShareIcon from '@/assets/icons/share.svg?react';
-
-import styles from './PostActions.module.less';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
+import { styles } from './PostActions.styles';
 
 const PostActions = () => {
   return (
     <>
-      <div className={styles.actionWrap}>
+      <div css={styles}>
         <Button shape="round" size="middle">
           <Icon icon={HeartLightIcon} className="classSvg"></Icon>
         </Button>
