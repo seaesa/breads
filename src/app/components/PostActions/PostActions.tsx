@@ -1,30 +1,32 @@
 import { memo } from 'react';
-import HeartLightIcon from '@/assets/icons/heart-light.svg?react';
-import CommentIcon from '@/assets/icons/comment.svg?react';
-import RepostIcon from '@/assets/icons/repost.svg?react';
-import ShareIcon from '@/assets/icons/share.svg?react';
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
-import { styles } from './PostActions.styles';
+import { HeartLightIcon, CommentIcon, RepostIcon, ShareIcon } from '@/assets/icons/';
+import { Icon } from '@/app/components';
+import styled from '@emotion/styled';
+import { Button } from '@/app/components/base';
 
 const PostActions = () => {
   return (
     <>
-      <div css={styles}>
-        <Button shape="round" size="middle">
-          <Icon icon={HeartLightIcon} className="classSvg"></Icon>
+      <PostAction>
+        <Button shape='round' size='middle'>
+          <Icon icon={HeartLightIcon} light></Icon>
         </Button>
-        <Button shape="round" size="middle">
-          <Icon icon={CommentIcon} className="classSvg"></Icon>
+        <Button shape='round' size='middle'>
+          <Icon icon={CommentIcon} light></Icon>
         </Button>
-        <Button shape="round" size="middle">
+        <Button shape='round' size='middle'>
           <Icon icon={RepostIcon}></Icon>
         </Button>
-        <Button shape="round" size="middle">
-          <Icon icon={ShareIcon} className="classSvg"></Icon>
+        <Button shape='round' size='middle'>
+          <Icon icon={ShareIcon} light></Icon>
         </Button>
-      </div>
+      </PostAction>
     </>
   );
 };
+
+export const PostAction = styled('div')`
+  display: flex;
+`;
+
 export default memo(PostActions);

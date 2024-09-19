@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { LoadingBarProvider, AntDesignProvider, ThemeProvider } from './providers';
-import { GlobalStyles } from './styles';
+import { AntDesignProvider, ThemeProvider } from './providers';
+import GlobalStyles from './styles/GlobalStyles';
+import { LoadingBar } from './app/components';
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <LoadingBarProvider />
+      <LoadingBar />
       <ThemeProvider>
         <AntDesignProvider>
           <Outlet />

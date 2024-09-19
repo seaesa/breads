@@ -2,7 +2,6 @@ import en from 'antd/locale/en_US';
 import { ConfigProvider, theme } from 'antd';
 import type { ThemeConfig } from 'antd';
 import { useTheme } from '@/stores/theme';
-import '@/assets/styles/variable.less';
 
 const { defaultAlgorithm, darkAlgorithm, compactAlgorithm } = theme;
 
@@ -31,6 +30,9 @@ const AntDesign = ({ children }: { children: React.ReactNode }) => {
       Divider: {
         margin: 0,
         marginLG: 0,
+      },
+      Image: {
+        colorBgMask: 'rgb(0, 0, 0)',
       },
     },
   };

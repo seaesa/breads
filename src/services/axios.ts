@@ -22,19 +22,19 @@ class Http<T extends CreateAxiosDefaults> {
       throw handleAxiosErorr(error as AxiosError);
     }
   }
-  async post<T>(url: string, data: any, config?: AxiosRequestConfig): Promise<T> {
+  async post<T>(url: string, data: unknown, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response: AxiosResponse = await this.api.post(url, data, config);
       return response.data;
-    } catch (error: any) {
+    } catch (error: unknown) {
       throw handleAxiosErorr(error as AxiosError);
     }
   }
-  async put<T>(url: string, data: any, config: AxiosRequestConfig): Promise<T> {
+  async put<T>(url: string, data: unknown, config: AxiosRequestConfig): Promise<T> {
     try {
       const response: AxiosResponse = await this.api.put(url, data, config);
       return response.data;
-    } catch (error: any) {
+    } catch (error: unknown) {
       throw handleAxiosErorr(error as AxiosError);
     }
   }
@@ -42,7 +42,7 @@ class Http<T extends CreateAxiosDefaults> {
     try {
       const response: AxiosResponse = await this.api.get(url, config);
       return response.data;
-    } catch (error: any) {
+    } catch (error: unknown) {
       throw handleAxiosErorr(error as AxiosError);
     }
   }

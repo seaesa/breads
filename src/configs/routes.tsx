@@ -12,21 +12,21 @@ const router = createBrowserRouter([
       {
         path: '/search',
         lazy: async () => {
-          let { SearchPage } = await import('@/app/pages');
+          const { SearchPage } = await import('@/app/pages');
           return { Component: SearchPage };
         },
       },
       {
         path: '/login',
         lazy: async () => {
-          let { LoginPage } = await import('@/app/pages');
+          const { LoginPage } = await import('@/app/pages');
           return { Component: LoginPage };
         },
       },
       {
         path: '/:userId',
         lazy: async () => {
-          let { UserPage } = await import('@/app/pages');
+          const { UserPage } = await import('@/app/pages');
           return { Component: UserPage };
         },
       },

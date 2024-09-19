@@ -9,6 +9,15 @@ const globalStyles = css`
   ${resetCss}
 
   :root {
+    --dark-backdrop-background: rgba(0, 0, 0, 0.7);
+    --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --desktop-header-height: 74px;
+    --mobile-header-height: 60px;
+    --large-screen-max-page-width: 1230px;
+    --large-screen-max-width: 620px;
+  }
+  :root {
     --base-color: rgb(0, 0, 0);
     --secondary-color: rgb(255, 255, 255);
     // text
@@ -32,10 +41,6 @@ const globalStyles = css`
     --charcoal-text: var(--charcoal-icon);
     --navigation-icon: rgb(184, 184, 184);
     --navigation-item-hover-background: rgba(0, 0, 0, 0.04);
-
-    --dark-backdrop-background: rgba(0, 0, 0, 0.7);
-    --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-      'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
     &.dark {
       --base-color: rgb(255, 255, 255);
@@ -68,23 +73,18 @@ const globalStyles = css`
       'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-weight: 400;
     font-style: normal;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--primary-background);
+    color: var(--primary-text);
+    overflow-y: visible;
+    font-size: 1.5rem;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
   }
 
   html {
     font-size: 62.5%;
     overflow-y: scroll !important;
     touch-action: manipulation;
-  }
-  ::-webkit-scrollbar {
-    background-color: #fff;
-  }
-  .classSvg {
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
   }
 `;
 

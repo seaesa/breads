@@ -6,10 +6,10 @@ import type { IProps, LoadingBarRef } from 'react-top-loading-bar';
 
 type LoadingBarProps = Omit<IProps & React.RefAttributes<LoadingBarRef>, 'href'>;
 
-const LoadingBar: React.FC<LoadingBarProps> = ({ color, ...props }) => {
+const LoadingBar: React.FC<Omit<LoadingBarProps, 'ref'>> = ({ color, ...props }) => {
+  const { theme } = useTheme();
   const navigation = useNavigation();
   const ref = useRef<LoadingBarRef>(null);
-  const { theme } = useTheme();
   useEffect(() => {
     if (navigation.state === 'loading' || navigation.state === 'submitting') {
       ref.current?.staticStart();

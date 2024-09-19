@@ -10,8 +10,14 @@ export default defineConfig({
       targets: ['defaults', 'not IE 11'],
     }),
     react({
-      jsxImportSource: '@emotion/react',
-      plugins: [['@swc/plugin-emotion', {}]],
+      plugins: [
+        [
+          '@swc/plugin-emotion',
+          {
+            labelFormat: '[filename]',
+          },
+        ],
+      ],
     }),
     svgr({
       svgrOptions: {
