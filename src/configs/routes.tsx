@@ -1,9 +1,10 @@
 import App from '@/App';
-import { ErrorPage, LandingPage } from '@/app/pages';
+import { ErrorPage, LandingPage, LoginPage, SearchPage } from '@/app/pages';
 import { createBrowserRouter } from 'react-router-dom';
 const router = createBrowserRouter([
   {
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
@@ -11,17 +12,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/search',
-        lazy: async () => {
-          const { SearchPage } = await import('@/app/pages');
-          return { Component: SearchPage };
-        },
+        element: <SearchPage />,
       },
       {
         path: '/login',
-        lazy: async () => {
-          const { LoginPage } = await import('@/app/pages');
-          return { Component: LoginPage };
-        },
+        element: <LoginPage />,
       },
       {
         path: '/:userId',

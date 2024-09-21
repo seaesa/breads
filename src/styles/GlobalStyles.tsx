@@ -6,8 +6,6 @@ const GlobalStyles = () => {
 };
 
 const globalStyles = css`
-  ${resetCss}
-
   :root {
     --dark-backdrop-background: rgba(0, 0, 0, 0.7);
     --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
@@ -16,6 +14,7 @@ const globalStyles = css`
     --mobile-header-height: 60px;
     --large-screen-max-page-width: 1230px;
     --large-screen-max-width: 620px;
+    --search-page-width: 572px;
   }
   :root {
     --base-color: rgb(0, 0, 0);
@@ -67,6 +66,8 @@ const globalStyles = css`
       --navigation-item-hover-background: rgba(255, 255, 255, 0.05);
     }
   }
+
+  ${resetCss}
 
   body {
     font-family: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial',

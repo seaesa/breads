@@ -1,29 +1,25 @@
-import { css } from '@emotion/react';
+import { Icon as MyIcon } from '@/app/components';
+import styled from '@emotion/styled';
+import { Flex } from 'antd';
 
-export const styles = css`
-  width: calc(@search-width + 34px);
-  .searchWrap {
-    .searchIcon {
-      --fill: transparent;
-      --width: 16px;
-      --height: 16px;
-    }
+// width: calc(@search-width + 34px);
+export const Search = styled(Flex)`
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+`;
 
-    .searchBox {
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      padding: 14px 16px;
-    }
+export const Icon = styled(MyIcon)`
+  --fill: transparent;
+`;
 
-    .searchInput {
-      outline: none;
-      background: transparent;
-      height: 100%;
-      width: 100%;
-      border: none;
-    }
-  }
+export const Input = styled('input')`
+  outline: none;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  border: none;
 `;

@@ -2,8 +2,20 @@ import { Link } from 'react-router-dom';
 import { Avatar, Col, Divider, Flex, Row, Typography } from 'antd';
 import { OptionIcon } from '@/assets/icons';
 import { PostActions, Icon } from '@/app/components';
-import { Button, Image } from '@/app/components/base';
+import { Button, Image, Popover } from '@/app/components/base';
 import * as P from './Post.styles';
+import ToolTipUserDetail from '../ToolTipUserDetail/ToolTipUserDetail';
+
+const ListMenu = () => {
+  return (
+    <>
+      <Flex>
+        <Button type='primary'>Report</Button>
+      </Flex>
+      <Button type='primary'>Report</Button>
+    </>
+  );
+};
 const Post = () => {
   return (
     <>
@@ -19,16 +31,26 @@ const Post = () => {
           <Col span={22}>
             <Flex align='center'>
               <Flex gap={6} flex={1} align='center'>
-                <P.Link to=''>
-                  <Typography.Text>james_photography89</Typography.Text>
-                </P.Link>
+                <Popover
+                  content={<ToolTipUserDetail />}
+                  arrow={false}
+                  trigger='hover'
+                  placement='bottom'
+                  destroyTooltipOnHide
+                >
+                  <P.Link to=''>
+                    <Typography.Text>james_photography89</Typography.Text>
+                  </P.Link>
+                </Popover>
                 <P.Time dateTime={new Date().toLocaleDateString()} title='time'>
                   <Typography.Text className='time'>14h</Typography.Text>
                 </P.Time>
               </Flex>
-              <Button size='middle' shape='circle'>
-                <Icon color='var(--secondary-icon)' icon={OptionIcon}></Icon>
-              </Button>
+              <Popover content={<ListMenu />} arrow={false} trigger='click' placement='bottom' destroyTooltipOnHide>
+                <Button size='middle' shape='circle'>
+                  <Icon color='var(--secondary-icon)' icon={OptionIcon}></Icon>
+                </Button>
+              </Popover>
             </Flex>
             <P.Content>
               <P.Title>
