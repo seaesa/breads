@@ -19,7 +19,7 @@ export { default as AngleLeftIcon } from './angle-left.svg?react';
 export { default as ReportIcon } from './report.svg?react';
 export { default as LoadingIcon } from './loading.svg?react';
 export { default as ClearIcon } from './clear.svg?react';
-export { default as LikeIcon } from './like.svg?react';
+export { default as LikeIcon } from './heart-gradient.svg';
 export { default as LinkIcon } from './link.svg?react';
 export { default as EmbedIcon } from './embed.svg?react';
 export { default as MutedIcon } from './muted.svg?react';

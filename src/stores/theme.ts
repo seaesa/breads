@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark' | 'system';
 
 type ThemeProps = {
   theme: Theme;

@@ -1,7 +1,7 @@
 import { id } from '@/lib/utils';
 import { navigationConfig } from '@/configs/navigation';
 import { Typography } from 'antd';
-import * as F from './FooterDefaultLayout.styles';
+import * as F from './FooterMainLayout.styles';
 const FooterDefaultLayout = () => {
   return (
     <>

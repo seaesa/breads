@@ -15,6 +15,8 @@ const globalStyles = css`
     --large-screen-max-page-width: 1230px;
     --large-screen-max-width: 620px;
     --search-page-width: 572px;
+
+    --side-navigation-width: 76px;
   }
   :root {
     --base-color: rgb(0, 0, 0);
@@ -40,7 +42,8 @@ const globalStyles = css`
     --charcoal-text: var(--charcoal-icon);
     --navigation-icon: rgb(184, 184, 184);
     --navigation-item-hover-background: rgba(0, 0, 0, 0.04);
-
+    // overlay
+    --dark-overlay: var(--navigation-item-hover-background);
     &.dark {
       --base-color: rgb(255, 255, 255);
       --secondary-color: rgb(0, 0, 0);
@@ -64,6 +67,8 @@ const globalStyles = css`
       --charcoal-text: var(--charcoal-icon);
       --navigation-icon: rgb(77, 77, 77);
       --navigation-item-hover-background: rgba(255, 255, 255, 0.05);
+      // overlay
+      --dark-overlay: var(--navigation-item-hover-background);
     }
   }
 
@@ -79,6 +84,9 @@ const globalStyles = css`
     overflow-y: visible;
     font-size: 1.5rem;
     margin: 0;
+    direction: 1tr;
+    line-height: 2.1rem;
+    -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
   }
 

@@ -31,17 +31,11 @@ const Post = () => {
           <Col span={22}>
             <Flex align='center'>
               <Flex gap={6} flex={1} align='center'>
-                <Popover
-                  content={<ToolTipUserDetail />}
-                  arrow={false}
-                  trigger='hover'
-                  placement='bottom'
-                  destroyTooltipOnHide
-                >
-                  <P.Link to=''>
+                <P.Link to=''>
+                  <Popover content={<ToolTipUserDetail />} arrow={false} trigger='hover' placement='bottom'>
                     <Typography.Text>james_photography89</Typography.Text>
-                  </P.Link>
-                </Popover>
+                  </Popover>
+                </P.Link>
                 <P.Time dateTime={new Date().toLocaleDateString()} title='time'>
                   <Typography.Text className='time'>14h</Typography.Text>
                 </P.Time>

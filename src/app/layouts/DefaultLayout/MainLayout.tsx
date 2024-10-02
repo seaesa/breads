@@ -1,22 +1,20 @@
-import * as D from './DefaultLayout.styles';
-import FooterDefaultLayout from './Footer/FooterDefaultLayout';
-import HeaderDefaultLayout from './Header/HeaderDefaultLayout';
+import * as D from './MainLayout.styles';
+import FooterMainLayout from './Footer/FooterMainLayout';
+import HeaderMainLayout from './Header/HeaderMainLayout';
 import { Flex } from 'antd';
 
 const LandingLayout = ({ children }: { children: JSX.Element }) => {
   return (
     <>
-      <Flex vertical>
-        <HeaderDefaultLayout />
-        <Flex vertical>
+      <HeaderMainLayout />
+      {/* <Flex vertical>
           <D.ContainerWrap>
             <D.Container wrap flex={1} vertical>
               <D.Main>{children}</D.Main>
             </D.Container>
-            <FooterDefaultLayout />
+            <FooterMainLayout />
           </D.ContainerWrap>
-        </Flex>
-      </Flex>
+        </Flex> */}
     </>
   );
 };

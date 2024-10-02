@@ -1,5 +1,6 @@
 import type { SvgProps } from '@/types/navigation';
 import styled from '@emotion/styled';
+import { forwardRef } from 'react';
 
 interface IconProps extends React.ComponentProps<'svg'> {
   title?: string;
@@ -7,13 +8,13 @@ interface IconProps extends React.ComponentProps<'svg'> {
   light?: boolean;
 }
 
-const MyIcon: React.FC<IconProps> = ({ icon: Icon, light = false, ...props }) => {
+const MyIcon = forwardRef<SVGSVGElement, IconProps>(({ icon: Icon, light = false, ...props }, ref) => {
   return (
     <>
-      <Icon {...props} />
+      <Icon {...props} ref={ref} />
     </>
   );
-};
+});
 const Icon = styled(MyIcon)`
   --fill: currentColor;
   --height: 16px;

@@ -22,6 +22,9 @@ export const resetCss = css`
     display: block;
     max-width: 100%;
   }
+  svg {
+    forced-color-adjust: auto;
+  }
   input,
   button,
   textarea,

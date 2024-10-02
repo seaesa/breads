@@ -6,10 +6,11 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDefau
 // config request to server
 class Http<T extends CreateAxiosDefaults> {
   declare api: AxiosInstance;
-  constructor({ baseURL, timeout = 1000 }: T) {
+  constructor({ baseURL, timeout = 1000, ...props }: T) {
     this.api = axios.create({
       baseURL: baseURL,
       timeout: timeout,
+      ...props,
     });
     this.handleRequestError();
     this.handleResponseError();

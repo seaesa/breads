@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { HeartLightIcon, CommentIcon, RepostIcon, ShareIcon } from '@/assets/icons/';
+import { HeartFapIcon, CommentIcon, RepostIcon, ShareIcon } from '@/assets/icons/';
 import { Icon } from '@/app/components';
 import styled from '@emotion/styled';
 import { Button } from '@/app/components/base';
@@ -9,7 +9,7 @@ const PostActions = () => {
     <>
       <PostAction>
         <Button shape='round' size='middle'>
-          <Icon icon={HeartLightIcon} light></Icon>
+          <Icon icon={HeartFapIcon} light></Icon>
         </Button>
         <Button shape='round' size='middle'>
           <Icon icon={CommentIcon} light></Icon>

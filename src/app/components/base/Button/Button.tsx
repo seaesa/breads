@@ -1,51 +1,50 @@
-import { memo, useState } from 'react';
-import type { ComponentType } from 'react';
+import { forwardRef, useState } from 'react';
 import type { ButtonProps } from 'antd';
-import { Link } from 'react-router-dom';
 import * as B from './Button.styles';
+// const ButtonWrap = <T extends null>(Component: ComponentType<any>): React.FC<T> => {
+//   return ({ href, ...props }) => {
+//     return (
+//       <>
+//         {href ? (
+//           <Link to={href}>
+//             <Component {...props} />
+//           </Link>
+//         ) : (
+//           <Component {...props} />
+//         )}
+//       </>
+//     );
+//   };
+// };
 
-type MyButtonProps = Omit<ButtonProps, 'href'>;
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, size = 'large', type = 'text', ...props }, ref) => {
+    const [active, setActive] = useState(false);
 
-const ButtonWrap = <T extends ButtonProps>(Component: ComponentType<MyButtonProps>): React.FC<T> => {
-  return ({ href, ...props }) => {
+    const handleOnMouseUp = () => {
+      setActive(false);
+    };
+
+    const handleOnMouseDown = () => {
+      setActive(true);
+    };
+
     return (
-      <>
-        {href ? (
-          <Link to={href}>
-            <Component {...props} />
-          </Link>
-        ) : (
-          <Component {...props} />
-        )}
-      </>
+      <B.Button
+        ref={ref}
+        aria-checked={active}
+        onMouseDown={handleOnMouseDown}
+        onMouseUp={handleOnMouseUp}
+        size={size}
+        type={type}
+        {...props}
+      >
+        {children}
+      </B.Button>
     );
-  };
-};
+  },
+);
 
-const Button: React.FC<ButtonProps> = ({ className, children, size = 'large', type = 'text', ...props }) => {
-  const [active, setActive] = useState(false);
-
-  const handleOnMouseUp = () => {
-    setActive(false);
-  };
-
-  const handleOnMouseDown = () => {
-    setActive(true);
-  };
-
-  return (
-    <B.Button
-      className={`${active && 'active'} ${className}`}
-      onMouseDown={handleOnMouseDown}
-      onMouseUp={handleOnMouseUp}
-      size={size}
-      type={type}
-      {...props}
-    >
-      {children}
-    </B.Button>
-  );
-};
 Button.displayName = 'Button';
 
-export default memo(ButtonWrap(Button));
+export default Button;
