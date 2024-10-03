@@ -9,32 +9,22 @@ interface IconProps extends React.ComponentProps<'svg'> {
 }
 
 const MyIcon = forwardRef<SVGSVGElement, IconProps>(({ icon: Icon, light = false, ...props }, ref) => {
-  return (
-    <>
-      <Icon {...props} ref={ref} />
-    </>
-  );
+  return <Icon ref={ref} {...props} />;
 });
-const Icon = styled(MyIcon)`
-  --fill: currentColor;
-  --height: 16px;
-  --width: 16px;
-  height: var(--height, revert);
-  width: var(--width, revert);
-  fill: var(--fill, revert);
-  color: ${(props) => props.color || 'inherit'};
-  flex-shrink: 0;
-  position: relative;
-  display: block;
 
-  ${(props) =>
-    props.light &&
-    `
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round; 
-    `}
-`;
+const Icon = styled(MyIcon)((props) => ({
+  position: 'relative',
+  display: 'block',
+  height: `${props.height || 'var(--height,revert)'}`,
+  width: `${props.width || 'var(--width,revert)'}`,
+  fill: `${props.fill || 'var(--fill,revert)'}`,
+  color: `${props.height || 'inherit'}`,
+  // [`${props.light}`]: {
+  //   stroke: 'currentColor',
+  //   strokeWidth: 2,
+  //   strokeLinecap: 'round',
+  //   strokeLinejoin: 'round',
+  // },
+}));
 
 export default Icon;

@@ -1,5 +1,4 @@
 import { AxiosError } from 'axios';
-
 export const handleAxiosErorr = (error: AxiosError) => {
   if (error.response) {
     console.group('Error:', {

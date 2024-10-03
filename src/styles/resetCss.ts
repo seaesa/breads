@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-
 export const resetCss = css`
   *,
   *::before,
@@ -13,7 +12,6 @@ export const resetCss = css`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
-
   img,
   picture,
   video,
@@ -31,7 +29,6 @@ export const resetCss = css`
   select {
     font: inherit;
   }
-
   p,
   h1,
   h2,

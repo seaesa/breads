@@ -1,1 +1,11 @@
-<svg aria-label="Close" role="img" viewBox="0 0 24 24" id="svg" style="--fill: currentColor; --height: 1.8rem; --width: 1.8rem;"><title>Close</title><line x1="21" x2="3" y1="3" y2="21"></line><line x1="21" x2="3" y1="21" y2="3"></line></svg>
+<svg
+  aria-label="Close"
+  role="img"
+  viewBox="0 0 24 24"
+  id="svg"
+  style="--fill: currentColor; --height: 1.8rem; --width: 1.8rem"
+>
+  <title>Close</title>
+  <line x1="21" x2="3" y1="3" y2="21"></line>
+  <line x1="21" x2="3" y1="21" y2="3"></line>
+</svg>

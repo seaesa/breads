@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Flex as AntFlex } from 'antd';
-
 export const Flex = styled(AntFlex)`
   height: 70px;
   width: 100%;
@@ -14,16 +13,13 @@ export const FooterList = styled('ul')`
 `;
 export const FooterItem = styled('li')`
   display: inline-block;
-
   &:first-of-type > a {
     text-decoration: none;
     cursor: text;
   }
-
   & + & {
     margin-left: 12px;
   }
-
   & > a {
     color: var(--secondary-text);
     font-size: 1.2rem;

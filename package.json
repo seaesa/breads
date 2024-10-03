@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -25,6 +26,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
     "@swc/plugin-emotion": "^4.0.1",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.3",

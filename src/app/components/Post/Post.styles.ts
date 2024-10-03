@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link as ReactLink } from 'react-router-dom';
-
 export const Post = styled('div')`
   padding: 12px 0;
 `;
@@ -8,14 +7,11 @@ export const Avatar = styled('div')`
   padding-top: 4px;
   position: relative;
 `;
-
 export const Time = styled('time')`
   color: var(--secondary-text);
   font-size: 1.3rem;
 `;
-
 export const Title = styled('div')``;
-
 export const Link = styled(ReactLink)`
   color: var(--primary-text);
   overflow: visible;
@@ -28,16 +24,12 @@ export const Link = styled(ReactLink)`
   word-break: break-all;
   line-height: 1.4;
   text-decoration: none;
-
   &:hover {
     text-decoration: underline;
   }
 `;
-
 export const ImageWrap = styled('div')``;
-
 export const Image = styled('div')``;
-
 export const Content = styled('div')`
   ${Title} {
     margin-top: 6px;

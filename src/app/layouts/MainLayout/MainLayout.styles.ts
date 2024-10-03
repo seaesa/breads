@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Flex } from 'antd';
-
 export const ContainerWrap = styled('div')`
   position: relative;
   top: var(--desktop-header-height);
@@ -11,7 +10,6 @@ export const Container = styled(Flex)`
   width: 100%;
   z-index: 1;
   height: auto;
-
   @media screen and (min-width: 700px) {
     max-width: var(--large-screen-max-width);
     padding: 0 24px;

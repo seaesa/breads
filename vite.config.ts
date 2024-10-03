@@ -21,7 +21,14 @@ export default defineConfig({
     }),
     svgr({
       svgrOptions: {
-        memo: true,
+        plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+        svgoConfig: {
+          floatPrecision: 2
+        },
+        svgo: true,
+        ref: true,
+        dimensions: true,
+
       },
     }),
   ],
@@ -33,5 +40,5 @@ export default defineConfig({
   server: {
     host: true,
   },
-  envPrefix: 'BREADS_',
+  envPrefix: 'BREADS__',
 });

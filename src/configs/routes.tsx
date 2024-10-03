@@ -6,14 +6,8 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: '/',
-        element: <LandingPage />,
-      },
-      {
-        path: '/search',
-        element: <SearchPage />,
-      },
+      { path: '/', element: <LandingPage /> },
+      { path: '/search', element: <SearchPage /> },
       {
         path: '/login',
         element: <LoginPage />,
@@ -25,12 +19,8 @@ const router = createBrowserRouter([
           return { Component: UserPage };
         },
       },
-      {
-        path: '*',
-        element: <ErrorPage />,
-      },
+      { path: '*', element: <ErrorPage /> },
     ],
   },
 ]);
-
 export { router };

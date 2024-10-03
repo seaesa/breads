@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Avatar as AntAvatar, Flex, Typography } from 'antd';
-
 export const ToolTipWrap = styled(Flex)`
   width: 340px;
 `;

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-
 export const BaseLink = styled(Link)`
   border: 0 solid var(--dark-overlay);
   padding: 0;
