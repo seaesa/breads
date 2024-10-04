@@ -1,9 +1,6 @@
-import * as D from './MainLayout.styles';
-import FooterMainLayout from './Footer/FooterMainLayout';
 import HeaderMainLayout from './Header/HeaderMainLayout';
-import { Flex } from 'antd';
 
-const LandingLayout = ({ children }: { children: JSX.Element }) => {
+const MainLayout = ({ children }: { children: JSX.Element }) => {
   return (
     <>
       <HeaderMainLayout />
@@ -19,4 +16,4 @@ const LandingLayout = ({ children }: { children: JSX.Element }) => {
   );
 };
 
-export default LandingLayout;
+export default MainLayout;

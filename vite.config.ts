@@ -23,12 +23,11 @@ export default defineConfig({
       svgrOptions: {
         plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
         svgoConfig: {
-          floatPrecision: 2
+          floatPrecision: 2,
         },
         svgo: true,
         ref: true,
-        dimensions: true,
-
+        dimensions: true
       },
     }),
   ],

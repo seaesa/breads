@@ -15,7 +15,7 @@ const AntDesign = ({ children }: { children: React.ReactNode }) => {
       borderRadius: 10,
       fontSize: 15,
       fontFamily: 'var(--font-family-system)',
-      colorPrimary: 'var(--base-color)',
+      // colorPrimary: 'var(--base-color)',
       colorTextBase: 'var(--text-primary)',
       colorBgMask: 'var(--dark-backdrop-background)',
       controlOutline: 'var(--primary-outline)',

@@ -7,11 +7,13 @@ const FooterDefaultLayout = () => {
     <>
       <F.Flex align='center'>
         <F.FooterList>
-          {navigationConfig.footer.map((navigation) => (
-            <F.FooterItem key={id()}>
-              <Typography.Link href={navigation.href}>{navigation.title}</Typography.Link>
-            </F.FooterItem>
-          ))}
+          {navigationConfig.footer.map((navigation) => {
+            return (
+              <F.FooterItem key={id()}>
+                <Typography.Link href={navigation.href}>{navigation.title}</Typography.Link>
+              </F.FooterItem>
+            )
+          })}
         </F.FooterList>
       </F.Flex>
     </>

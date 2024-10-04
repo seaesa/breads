@@ -1,7 +1,8 @@
 export type SvgProps = React.FunctionComponent<React.ComponentProps<'svg'> & { title?: string }>;
 export interface HeaderConfig {
-  title?: string;
+  title: string;
   href?: string;
-  icon?: SvgProps;
+  icon: SvgProps;
+  [name: string]: unknown;
 }
-export interface FooterConfig extends HeaderConfig {}
+export interface FooterConfig extends Pick<HeaderConfig, 'href' | 'title'> { }

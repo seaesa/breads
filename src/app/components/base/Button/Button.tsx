@@ -29,12 +29,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
-const BaseButton = styled(AntButton)((_) => ({
-  // [`&:active`]: {
-  //   transform: 'scale(0.9) matrix(1, 0, 0, 1, 0, 0) translateX(0)',
-  //   transition: 'transform 0.2s cubic-bezier(0.5, 0, 0, 1)',
-  // },
-}));
+const BaseButton = styled(AntButton)`
+  &:active {
+    transform: scale(0.9) matrix(1, 0, 0, 1, 0, 0) translateX(0);
+    transition: transform 0.2s cubic-bezier(0.5, 0, 0, 1);
+  }
+`;
 Button.displayName = 'Button';
 
 export default ButtonWrap(Button);

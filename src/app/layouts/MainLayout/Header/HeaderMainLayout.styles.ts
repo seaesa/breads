@@ -32,9 +32,10 @@ export const Button = styled(MyButton)`
   }
 `;
 export const Icon = styled(MyIcon)`
-  --width: 26px;
-  --height: 26px;
+  --width: 24px;
+  --height: 24px;
   --fill: transparent;
+  color:var(--navigation-icon);
 `;
 export const Header = styled(Flex)`
   position: fixed;
