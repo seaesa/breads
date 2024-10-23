@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier . --write"
+    "format": "lint-staged"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -18,7 +18,9 @@
     "antd-style": "^3.7.0",
     "axios": "^1.7.7",
     "react": "^18.3.1",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
+    "react-responsive": "^10.0.0",
     "react-router-dom": "^6.26.1",
     "react-top-loading-bar": "^2.3.1",
     "uuid": "^10.0.0",

@@ -1,5 +1,4 @@
 /**
- * @see https://prettier.io/docs/en/configuration.html
  * @type {import("prettier").Config}
  */
 const config = {
@@ -14,13 +13,7 @@ const config = {
       options: {
         parser: 'html',
         htmlWhitespaceSensitivity: 'ignore',
-        semi: true,
-      },
-    },
-    {
-      files: '*.tsbuildinfo',
-      options: {
-        parser: 'json',
+        semi: false,
       },
     },
   ],

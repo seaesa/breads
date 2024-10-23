@@ -4,11 +4,11 @@ type ThemeProps = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
 };
-const useThemeStore = create<ThemeProps>((set) => ({
+const themeSrote = create<ThemeProps>((set) => ({
   theme: (localStorage.getItem('mode') as Theme) || 'system',
   setTheme: (theme) => {
     localStorage.setItem('mode', theme);
     set(() => ({ theme }));
   },
 }));
-export const useTheme = () => useThemeStore((state) => state);
+export const useTheme = () => themeSrote((state) => state);
